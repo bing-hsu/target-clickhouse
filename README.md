@@ -8,10 +8,6 @@ and relies
 on [HTTP interface](https://stackoverflow.com/questions/52002023/how-to-insert-data-to-clickhouse-from-file-by-http-interface)
 to perform build load.
 
-```sql
-INSERT INTO {database}.{table}
-FROM INFILE {file_name} FORMAT CSV
-```
 
 ## Target Configuration Document
 
