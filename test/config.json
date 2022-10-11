@@ -1,0 +1,9 @@
+{
+  "connection": {
+    "host": "localhost"
+  },
+  "sync.stream_table_map": {
+    "stream#1": "test_target_ck.stream_1",
+    "stream#2": "test_target_ck.stream_2"
+  }
+}
