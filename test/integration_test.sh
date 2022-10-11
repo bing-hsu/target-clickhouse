@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# required proper python environment
+
 WD="$(pwd)/$(dirname $0)"
 # prepare test db
 HTTP_CONN='http://localhost:8123/'
