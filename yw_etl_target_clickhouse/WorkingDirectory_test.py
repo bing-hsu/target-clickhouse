@@ -9,7 +9,8 @@ from yw_etl_target_clickhouse.WorkingDirectory import WorkingDirectory
 class TestWorkingDirectory(TestCase):
     def test_should_use_home_as_last_resort(self):
         # unset env
-        del os.environ[Env.SYNC_WORKING_DIRECTORY]
+        if os.environ.get(Env.SYNC_WORKING_DIRECTORY, None) is not None:
+            del os.environ[Env.SYNC_WORKING_DIRECTORY]
         # empty conf
         conf = {}
 

@@ -17,7 +17,7 @@ class WorkingDirectory:
         2. env $(_wd_env)
         3. $HOME/$(_wd_name)
         """
-        ok, p = WorkingDirectory._check_pwd(conf)
+        ok, p = WorkingDirectory._check_conf(conf)
         if ok:
             return p
 
@@ -52,7 +52,7 @@ class WorkingDirectory:
         return True, v
 
     @staticmethod
-    def _check_pwd(conf: dict) -> (bool, Path):
+    def _check_conf(conf: dict) -> (bool, Path):
         wd = conf.get(Conf.SYNC_WORKING_DIRECTORY, None)
         if wd is None:
             return False, None
