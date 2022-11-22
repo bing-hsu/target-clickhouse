@@ -22,7 +22,7 @@ def _quote(s: str) -> str:
     if s.startswith('`') and s.endswith('`'):
         return s
     else:
-        return f"`${s}`"
+        return f"`{s}`"
 
 
 class Database:
