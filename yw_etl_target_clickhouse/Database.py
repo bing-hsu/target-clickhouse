@@ -18,6 +18,13 @@ def _from_dict(config: dict):
     return ConnectionConfig(host, port, username, password)
 
 
+def _quote(s: str) -> str:
+    if s.startswith('`') and s.endswith('`'):
+        return s
+    else:
+        return f"`${s}`"
+
+
 class Database:
     """facade clickhouse's HTTP interface
     """
@@ -36,7 +43,7 @@ class Database:
         return f"{self.baseurl}?query={urllib.parse.quote(query)}"
 
     def load_csv(self, csv_path, into_table):
-        cmd = f"INSERT INTO {into_table} FORMAT CSV"
+        cmd = f"INSERT INTO {_quote(into_table)} FORMAT CSV"
         with open(csv_path, 'rb') as payload:
             r = requests.post(self._query_url(cmd), data=payload)
         if not r.ok:
