@@ -20,7 +20,7 @@ Configuration document should provide a mapping,`sync.stream_table_map`, between
 target-clickhouse processes and accumulates `RECORD` message of a stream into a CSV file
 and relies
 on [HTTP interface](https://stackoverflow.com/questions/52002023/how-to-insert-data-to-clickhouse-from-file-by-http-interface)
-to perform build load.
+to perform bulk load.
 
 
 ### Target Configuration Document
